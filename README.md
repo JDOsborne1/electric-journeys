@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# electric\_journey\_planner
+# Electric Vehicle Journey Planner
 
 <!-- badges: start -->
 

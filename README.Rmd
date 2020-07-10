@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# electric_journey_planner
+# Electric Vehicle Journey Planner
 
 <!-- badges: start -->
 <!-- badges: end -->
