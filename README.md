@@ -40,3 +40,11 @@ of sending a new query to the GoogleMapsAPI.
 
 Using this driving distance, we will then have edges for our network
 with appropriate weights.
+
+### Network infrastructure
+
+For this project, and to generate the networks to perform our required
+operations, we will be using the
+[{tidygraph}](https://cran.r-project.org/web/packages/tidygraph/tidygraph.pdf)
+package. This is based on earlier works with {igraph} and similar, but
+reworked with a new interface to conform to the ‘tidyverse’ style.

@@ -34,3 +34,8 @@ These then form the nodes of the network of charging points across the uk.
 We can then use the google maps API to get the driving distances between all the nodes in our network. Using the wrapper [{gmapsdistance}](https://cran.r-project.org/web/packages/gmapsdistance/readme/README.html) we can use any two UK postcodes as the input and get the driving distance. We can also wrap the functions in this package, such that it saves the results of the calls we make, and re-uses the results instead of sending a new query to the GoogleMapsAPI. 
 
 Using this driving distance, we will then have edges for our network with appropriate weights. 
+
+### Network infrastructure
+
+For this project, and to generate the networks to perform our required operations, we will be using the [{tidygraph}](https://cran.r-project.org/web/packages/tidygraph/tidygraph.pdf) package. This is based on earlier works with {igraph} and similar, but reworked with a new interface to conform to the 'tidyverse' style. 
+
