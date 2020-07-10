@@ -48,3 +48,27 @@ operations, we will be using the
 [{tidygraph}](https://cran.r-project.org/web/packages/tidygraph/tidygraph.pdf)
 package. This is based on earlier works with {igraph} and similar, but
 reworked with a new interface to conform to the ‘tidyverse’ style.
+
+### Route planning between nodes
+
+Once we have a network which consists of the different charging points
+as nodes, and the driving distance between them as edge weights, then it
+is a fairly straightforwards effort to determine the shortest path. To
+do this we can make use of `tidygraph::pair_measures`, which can
+generate the shortest distance between any two nodes. This, and some
+other tidygraph tools, such as `tidygraph::to_shortest_path` will enable
+us to generate the shortest paths between any two charging points in the
+UK.
+
+### Route planning in general
+
+This is the part which will require active usage of the Google Maps API.
+Essentially, we need to determine the closest charging point to the
+origin, and the closest charging point to the destination. This may be
+expanded upon later, since the most efficient point will be the furthest
+charging point which is still in range, but the closest is a simpler
+metric to start with for our POC. Once we have the two charging points
+which represent the entry and exit point of our network, we simply
+engage the ‘between-node’ route planning above to determine the sequence
+of charge points which make up the optimum journey for your electric
+vehicle.
