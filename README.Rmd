@@ -1,0 +1,21 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# electric_journey_planner
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of electric_journey_planner is to use the UK open charge point registry to develop a method for determining the journey for an electric vehicle over an arbitrary distance. 
+
+Also will use the google maps api to get the distances between any two postcodes and cache them
