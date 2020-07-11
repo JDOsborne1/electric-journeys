@@ -16,7 +16,7 @@
 #' @examples
 ejp_load_charge_data <- function(loc = NULL){
         if(is.null(loc)){
-                
+                readr::read_csv(paste0(cache_loc, "\\20200711_Postcode_Combs.csv"))
         } else {
                 stop("Not currently implemented any non cached elements")
         }
