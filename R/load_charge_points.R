@@ -76,12 +76,12 @@ ejp_expand_clean_charge_data <- function(charge_data, smol = TRUE){
                 dplyr::pull(postcode) 
         
         if(smol){
-                used_codes <- postcodes[1:10]
+                used_codes <- postcodes[1:100]
         } else {
                 used_codes <- postcodes
         }
         
-        combinations(n = length(used_codes), r = 2,  v = used_codes, repeats.allowed = FALSE) %>% 
+        t(combn(used_codes, 2)) %>% 
                 `colnames<-`(c("postcode_origin", "postcode_destin")) %>% 
                 as_tibble()
 }
