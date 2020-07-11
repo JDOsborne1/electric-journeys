@@ -70,11 +70,19 @@ ejp_clean_raw_charge_data <- function(file_loc){
 #' @export
 #'
 #' @examples
-ejp_expand_clean_charge_data <- function(charge_data){
-        charge_data %>% 
+ejp_expand_clean_charge_data <- function(charge_data, smol = TRUE){
+        postcodes <- charge_data %>% 
                 # Restricting ontly to the postcodes
-                dplyr::select(postcode_origin = postcode) %>% 
-                dplyr::mutate(postcode_destin = postcode_origin) %>% 
-                tidyr::expand(postcode_destin, postcode_origin) %>% 
-                dplyr::filter(postcode_destin != postcode_origin)       
+                dplyr::pull(postcode) 
+        
+        if(smol){
+                used_codes <- postcodes[1:10]
+        } else {
+                used_codes <- postcodes
+        }
+        
+        combinations(n = length(used_codes), r = 2,  v = used_codes, repeats.allowed = FALSE) %>% 
+                `colnames<-`(c("postcode_origin", "postcode_destin")) %>% 
+                as_tibble()
 }
+
