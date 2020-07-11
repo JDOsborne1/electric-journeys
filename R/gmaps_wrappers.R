@@ -8,6 +8,16 @@
 #'   in metres using the google maps API. Includes a default limiter to 10
 #'   queries to prevent accidental use of too many rows.
 #'
+#'   This querying process is quite slow, with a rate of approx. 5,000 queries
+#'   per hour. This is more than adequate for specific journeys, but when
+#'   working with the fairly brute force methods in this project is not really
+#'   viable. As an example, without some heuristics to narrow down the search,
+#'   there are ~19 Million combinations of postcodes which hold active charging
+#'   points. While strategies can be introduced to improve the efficiency of
+#'   this, by dropping connections which we know are going to be unfeasable, any
+#'   professional or high refresh rate application of this will likely need a
+#'   'premium' api key, with a higher query frequency.
+#'
 #' @param orig_dest_df Data.frame/tibble/data.table of origin and destination
 #'   points. Postcodes are used in this project, but any legal input to the maps
 #'   API will work here
