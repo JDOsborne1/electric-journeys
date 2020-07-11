@@ -57,10 +57,24 @@ ejp_clean_raw_charge_data <- function(file_loc){
                         , post_len = stringr::str_length(postcode)
                         
                         ) %>% 
-                dplyr::filter(post_len >= 5) %>% 
+                dplyr::filter(post_len >= 5) 
+}
+
+#' Expand Charge data
+#' 
+#' @description  Function which is intended to expand the postcodes for the valid charge points into the full grid of possible connections in the network. 
+#'
+#' @param charge_data 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+ejp_expand_clean_charge_data <- function(charge_data){
+        charge_data %>% 
                 # Restricting ontly to the postcodes
                 dplyr::select(postcode_origin = postcode) %>% 
                 dplyr::mutate(postcode_destin = postcode_origin) %>% 
                 tidyr::expand(postcode_destin, postcode_origin) %>% 
-                dplyr::filter(postcode_destin != postcode_origin)
+                dplyr::filter(postcode_destin != postcode_origin)       
 }
