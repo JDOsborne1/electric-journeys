@@ -41,6 +41,18 @@ of sending a new query to the GoogleMapsAPI.
 Using this driving distance, we will then have edges for our network
 with appropriate weights.
 
+Additionally, there is a package called
+[{opentripplanner}](https://ropensci.org/technotes/2020/02/25/opentripplanner/),
+maintained by ROpenSci, which opens a free query service to determine
+the routing between places. This uses a latitude and longitude based
+system, so will not work immediately from postcodes.
+
+However, using the postcode lookup from [Code-Point
+Open](https://osdatahub.os.uk/downloads/open), we can generate a
+coordinate for each relevant postcode. Thankfully however, the raw
+charge point data in the national charge point registry *already
+contains* the lat-long coordinates for each charging point.
+
 ### Network infrastructure
 
 For this project, and to generate the networks to perform our required
