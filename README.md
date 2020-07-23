@@ -60,6 +60,11 @@ other tidygraph tools, such as `tidygraph::to_shortest_path` will enable
 us to generate the shortest paths between any two charging points in the
 UK.
 
+Key examples on getting this process to work within the tidygraphs API
+were found in the Rstudio Rviews on the topic, found
+[here](https://rviews.rstudio.com/2019/03/06/intro-to-graph-analysis/).
+Including the elements to plot the journey.
+
 ### Route planning in general
 
 This is the part which will require active usage of the Google Maps API.
